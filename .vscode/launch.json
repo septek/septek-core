@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "type": "cppvsdbg",
+            "request": "launch",
+            "name": "Launch (Debug)",
+            "preLaunchTask": "CMake: configure and build",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/build/${fileWorkspaceFolderBasename}",
+            "console": "integratedTerminal",
+            "args": [],
+            "environment": [
+                {
+                    "name": "ASAN_OPTIONS",
+                    "value": "detect_leaks=0"
+                }
+            ]
+        },
+    ],
+}

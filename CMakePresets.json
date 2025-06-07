@@ -1,0 +1,31 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "debug-static",
+            "displayName": "Debug (Static)",
+            "description": "Uses Ninja, vcpkg & Clang",
+            "generator": "Ninja",
+            "binaryDir": "build",
+            "cacheVariables": {
+                "BUILD_SHARED_LIBS": false,
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+            }
+        },
+        {
+            "name": "debug-shared",
+            "displayName": "Debug (Shared)",
+            "description": "Uses Ninja, vcpkg & Clang",
+            "generator": "Ninja",
+            "binaryDir": "build",
+            "cacheVariables": {
+                "BUILD_SHARED_LIBS": true,
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+            }
+        }
+    ]
+}

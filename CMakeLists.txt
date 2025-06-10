@@ -16,18 +16,18 @@ add_executable(septek-core
 include(FetchContent)
 
 FetchContent_Declare(
-    sf-structures
-    GIT_REPOSITORY https://github.com/septumfunk/sf-structures.git
+    sf-gfx
+    GIT_REPOSITORY https://github.com/septek/sf-gfx.git
     GIT_TAG master
 )
-FetchContent_MakeAvailable(sf-structures)
+FetchContent_MakeAvailable(sf-gfx)
 add_custom_command(TARGET septek-core POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        $<TARGET_FILE:sf-structures>
+        $<TARGET_FILE:sf-gfx>
         $<TARGET_FILE_DIR:septek-core>
 )
 
 
 target_link_libraries(septek-core PRIVATE
-    sf-structures
+    sf-gfx
 )
